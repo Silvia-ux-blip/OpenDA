@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento HTML Hover JS</title>
+    <style>
+        body {
+            background-color: cyan;
+            text-align: center; /* Centra todo el contenido del body */
+        }
+        h1, h6 {
+            transition: color 0.3s; /* Añade una transición suave para el cambio de color */
+        }
+        .image-container {
+            display: flex; /* Utiliza flexbox para alinear las imágenes en fila */
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            gap: 20px; /* Añade espacio entre las imágenes */
+            flex-wrap: wrap; /* Asegura que las imágenes no se desborden si el contenedor es pequeño */
+        }
+        .image-item {
+            display: flex;
+            flex-direction: column; /* Coloca el enlace debajo de la imagen */
+            align-items: center; /* Centra el enlace debajo de la imagen */
+            transition: opacity 0.3s; /* Añade transición suave para el cambio de opacidad */
+        }
+        .image-item img {
+            height: 200px; /* Ajusta la altura de las imágenes */
+        }
+        .image-item a {
+            margin-top: 10px; /* Añade un pequeño margen arriba del enlace */
+            color: blue; /* Color del texto del enlace */
+            text-decoration: none; /* Quita el subrayado del enlace */
+        }
+        .image-item a:hover {
+            text-decoration: underline; /* Subraya el enlace cuando se pasa el ratón sobre él */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">Hello World! Hello OpenDay!</h1>
+    <h6 id="sub-title">Hello World! Hello HTML!</h6>
+    <div class="image-container">
+        <div class="image-item" id="image1-container">
+            <img src="imagen1.jpg" alt="Imagen 1">
+            <a href="https://www.42Urduliz.com/" target="_blank">42Urduliz</a>
+        </div>
+        <div class="image-item" id="image2-container">
+            <img src="imagen2.jpg" alt="Imagen 2">
+            <a href="https://www.42network.org/" target="_blank">42network</a>
+        </div>
+    </div>
+
+    <script>
+        // Obtener elementos por su id
+        const mainTitle = document.getElementById('main-title');
+        const subTitle = document.getElementById('sub-title');
+        const imageItems = document.querySelectorAll('.image-item');
+
+        // Función para manejar el evento de mouse enter
+        function handleMouseEnter(event) {
+            const target = event.currentTarget;
+            target.style.opacity = '0'; // Cambia la opacidad del contenedor a 0
+        }
+
+        // Función para manejar el evento de mouse leave
+        function handleMouseLeave(event) {
+            const target = event.currentTarget;
+            target.style.opacity = '1'; // Restaura la opacidad del contenedor a 1
+        }
+
+        // Asignar eventos de hover a los contenedores de imágenes
+        imageItems.forEach(item => {
+            item.addEventListener('mouseenter', handleMouseEnter);
+            item.addEventListener('mouseleave', handleMouseLeave);
+        });
+
+        // Asignar eventos de hover al título y subtítulo
+        mainTitle.addEventListener('mouseenter', function() {
+            mainTitle.style.color = 'green'; // Cambia el color del título a verde
+        });
+
+        mainTitle.addEventListener('mouseleave', function() {
+            mainTitle.style.color = ''; // Restaura el color original del título
+        });
+
+        subTitle.addEventListener('mouseenter', function() {
+            subTitle.style.color = 'red'; // Cambia el color del subtítulo a rojo
+        });
+
+        subTitle.addEventListener('mouseleave', function() {
+            subTitle.style.color = ''; // Restaura el color original del subtítulo
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento HTML Hover</title>
+    <style>
+        body {
+            background-color: cyan;
+            text-align: center; /* Centra todo el contenido del body */
+        }
+        h1 {
+            color: red;
+        }
+        h6 {
+            color: green;
+        }
+        .image-container {
+            display: flex; /* Utiliza flexbox para alinear las imágenes en fila */
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            gap: 20px; /* Añade espacio entre las imágenes */
+            flex-wrap: wrap; /* Asegura que las imágenes no se desborden si el contenedor es pequeño */
+        }
+        .image-item {
+            display: flex;
+            flex-direction: column; /* Coloca el enlace debajo de la imagen */
+            align-items: center; /* Centra el enlace debajo de la imagen */
+            transition: opacity 0.3s; /* Añade transición suave para el cambio de opacidad */
+        }
+        .image-item img {
+            height: 200px; /* Ajusta la altura de las imágenes */
+        }
+        .image-item a {
+            margin-top: 10px; /* Añade un pequeño margen arriba del enlace */
+            color: blue; /* Color del texto del enlace */
+            text-decoration: none; /* Quita el subrayado del enlace */
+        }
+        .image-item a:hover {
+            text-decoration: underline; /* Subraya el enlace cuando se pasa el ratón sobre él */
+        }
+        .image-item:hover {
+            opacity: 0; /* Cambia la opacidad a 0 al hacer hover sobre el contenedor */
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World! Hello OpenDay!</h1>
+    <h6>Hello World! Hello HTML!</h6>
+    <div class="image-container">
+        <div class="image-item">
+            <img src="imagen1.jpg" alt="Imagen 1">
+            <a href="https://www.42Urduliz.com/" target="_blank">42Urduliz</a>
+        </div>
+        <div class="image-item">
+            <img src="imagen2.jpg" alt="Imagen 2">
+            <a href="https://www.42network.org/" target="_blank">42network</a>
+        </div>
+    </div>
+</body>
+</html>
+
